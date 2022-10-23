@@ -1,0 +1,4 @@
+# Megalodonblock
+User-agent: Megalodon
+Disallow: /
+# 魚拓ブロック
