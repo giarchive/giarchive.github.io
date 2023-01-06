@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<html lang="ja">
 		<head>
-			<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow,noarchive" />
+			<meta charset="UTF-8">
 			<title>放浪者(スカラマシュ)の全情報書き写し</title>
 			<script src="https://giarchive.github.io/test/jquery.min.js"></script>
 			<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -22,13 +22,6 @@
 		<h2>設定</h2>
 <form name="frm1" class="exp01" action="dummy">
 <script type="text/javascript">
-window.onload=function() {
-var $replacement = document.getElementsByClassName( "wanderer_name" );
-for (i = 0; i < $replacement.length; i++) {
-$replacement[i].innerHTML = get_cook('cookie1');
-}
-}
-
 function get_cook(coknam) {
   coktxt = document.cookie+";";
   stano = coktxt.indexOf(coknam);
@@ -47,10 +40,14 @@ function sav_cook(coknam) {
   day0.setTime(day0.getTime()+604800000);
   endday = day0.toGMTString();
   document.cookie = coknam+"="+escape(txt0)+";expires="+endday;
+  var $replacement = document.getElementsByClassName( "wanderer_name" );
+for (i = 0; i < $replacement.length; i++) {
+$replacement[i].innerHTML = txt0;
+}
 }
 </script>
 <input name="txt1" type="text" value="" tabindex="0" accesskey="i"><br>
-<input type="button" value="保存" onclick="sav_cook('cookie1')" onkeypress="sav_cook('cookie1')" tabindex="1" accesskey="1"><br>
+<input type="button" value="保存" class="button" onclick="sav_cook('cookie1')" onkeypress="sav_cook('cookie1')" tabindex="1" accesskey="1"><br>
 <span class="wanderer_name">放浪者</span>
 </form>
     <div id="footer" class="not-margin-div"></div>
